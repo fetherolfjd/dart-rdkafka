@@ -1,0 +1,6 @@
+{
+    "dockerFile": "./Dockerfile.devcontainer",
+    "extensions": [
+        "dart-code.dart-code"
+    ]
+}
