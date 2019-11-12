@@ -3,4 +3,4 @@
 ## Overview
 
 The `dart-rdkafka` library uses the foreign function interface library from Dart
-to wrap and call into the C/C++ `librdkafka` library.
+to wrap and call into the C `librdkafka` library.

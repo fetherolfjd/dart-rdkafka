@@ -1,8 +1,6 @@
-/// Support for doing something awesome.
+/// Support for doing something Kafka.
 ///
 /// More dartdocs go here.
 library dart_rdkafka;
 
-export 'src/dart_rdkafka_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/rdkafka/rdkafka.dart';

@@ -1,16 +1,18 @@
-import 'package:dart_rdkafka/dart_rdkafka.dart';
+import 'package:dart_rdkafka/src/rdkafka/rdkafka.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    Awesome awesome;
+  group('A simple group of tests', () {
+    RdKafka rdKafka;
 
     setUp(() {
-      awesome = Awesome();
+      rdKafka = RdKafka();
     });
 
-    test('First Test', () {
-      awesome.doStuff();
+    test('First Simple Test', () {
+      print('Got int version: ${rdKafka.rdKafkaVersion()}');
+      print('Got str version: ${rdKafka.rdKafkaVersionStr()}');
+      print('Got debug ctx: ${rdKafka.rdKafkaGetDebugContexts()}');
     });
   });
 }
