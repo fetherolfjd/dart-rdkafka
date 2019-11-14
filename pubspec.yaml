@@ -1,6 +1,7 @@
 name: dart_rdkafka
 description: A low level wrapper around the C rdkafka library using Dart's FFI package.
 version: 0.0.1
+author: Justin D. Fetherolf <fetherolfjd@gmail.com>
 
 environment:
   sdk: '>=2.6.0 <3.0.0'

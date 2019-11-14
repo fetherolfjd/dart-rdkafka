@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:ffi/ffi.dart';
 
 import 'signatures.dart';
-
+import 'types.dart';
 import '../../common/utils.dart';
 
 class _RdKafkaBindings {
@@ -13,6 +13,7 @@ class _RdKafkaBindings {
   int Function() rd_kafka_version;
   Pointer<Utf8> Function() rd_kafka_version_str;
   Pointer<Utf8> Function() rd_kafka_get_debug_contexts;
+  void Function(Pointer<Pointer<RdKafkaErrDesc>> errdescs, Pointer<Int32> cntp) rd_kafka_get_err_descs;
 
   _RdKafkaBindings() {
     rdKafka = openLibraryForPlatform('rdkafka');
@@ -27,6 +28,10 @@ class _RdKafkaBindings {
 
     rd_kafka_get_debug_contexts = rdKafka
       .lookup<NativeFunction<rd_kafka_get_debug_contexts_native_t>>('rd_kafka_get_debug_contexts')
+      .asFunction();
+
+    rd_kafka_get_err_descs = rdKafka
+      .lookup<NativeFunction<rd_kafka_get_err_descs_native_t>>('rd_kafka_get_err_descs')
       .asFunction();
 
   }
