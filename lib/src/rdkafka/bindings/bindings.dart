@@ -18,7 +18,7 @@ class _RdKafkaBindings {
   Pointer<Utf8> Function(int err) rd_kafka_err2name;
 
   _RdKafkaBindings() {
-    rdKafka = openLibraryForPlatform('rdkafka');
+    rdKafka = openLibraryForPlatform('rdkafka', path: '/usr/local/lib/');
 
     rd_kafka_version = rdKafka
       .lookup<NativeFunction<rd_kafka_version_native_t>>('rd_kafka_version')

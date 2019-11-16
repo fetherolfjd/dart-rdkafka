@@ -12,5 +12,3 @@ cd librdkafka && \
 ./configure --install-deps && \
 make && \
 make install
-
-

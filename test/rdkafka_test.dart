@@ -19,7 +19,7 @@ void main() {
 
   group('Test string version', () {
     test('Test rdkafka is expected version', () {
-      final expected = '1.2.2-RC1-1-g8d44dd';
+      final expected = '1.2.2-RC1';
       final version = rdKafka.rdKafkaVersionStr();
       expect(version, equals(expected));
     });

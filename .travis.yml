@@ -1,10 +1,8 @@
-language: dart
+services:
+  - docker
 
 before_install:
-  - sudo apt-get install -y librdkafka-dev
-
-install:
-  - pub get
+  - docker build -f travis_build/Dockerfile --build-arg LIBRDKAFKA_VERSION=v1.2.2-RC1 -t dart-rdkafka-dev .
 
 script:
-  - pub run test
+  - docker run --rm dart-rdkafka-dev
