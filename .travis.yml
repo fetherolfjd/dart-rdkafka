@@ -1,7 +1,7 @@
 language: dart
 
 before_install:
-  - ./install_librdkafka.sh
+  - sudo apt-get install -y librdkafka-dev
 
 install:
   - pub get
