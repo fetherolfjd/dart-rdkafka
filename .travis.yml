@@ -1,0 +1,10 @@
+language: dart
+
+before_install:
+  - ./install_librdkafka.sh
+
+install:
+  - pub get
+
+script:
+  - pub run test
