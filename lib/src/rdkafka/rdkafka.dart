@@ -47,4 +47,12 @@ class RdKafka {
     return _errDescsCache;
   }
 
+  String rdKafkaErrorToString(int err) {
+    return Utf8.fromUtf8(bindings.rd_kafka_err2str(err));
+  }
+
+  String rdKafkaErrorToName(int err) {
+    return Utf8.fromUtf8(bindings.rd_kafka_err2name(err));
+  }
+
 }

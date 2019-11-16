@@ -41,4 +41,25 @@ void main() {
       expect(errDescs.length, equals(136));
     });
   });
+
+  group('Test err to string', () {
+    test('Test error strings match', () {
+      List<RdKafkaErrDesc> errDescs = rdKafka.rdKafkaGetErrDescs();
+      errDescs.forEach((ed) {
+        final err = rdKafka.rdKafkaErrorToString(ed.code);
+        expect(err, isNotNull);
+        expect(err, isNotEmpty);
+      });
+    });
+  });
+
+  group('Test err to name', () {
+    test('Test error names match', () {
+      List<RdKafkaErrDesc> errDescs = rdKafka.rdKafkaGetErrDescs();
+      errDescs.forEach((ed) {
+        final err = rdKafka.rdKafkaErrorToName(ed.code);
+        expect(err, equals(ed.name));
+      });
+    });
+  });
 }
