@@ -5,7 +5,7 @@ jobs:
   include:
     - os: linux
       dist: bionic
-      env: LIBRDKAFKA_VERSION=v1.2.2_RC1
+      env: LIBRDKAFKA_VERSION=v1.2.2-RC1
 
 before_install:
   - sudo apt-get install -y gcc g++ make
