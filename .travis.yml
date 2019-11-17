@@ -9,8 +9,9 @@ jobs:
 
 before_install:
   - sudo apt-get install -y gcc g++ make
+  - sudo mkdir -p /usr/local/include/librdkafka
   - git clone https://github.com/edenhill/librdkafka.git
-  - pushd librdkafka && git checkout $LIBRDKAFKA_VERSION && ./configure --install-deps --includedir=$(pwd) && make && make install && popd
+  - pushd librdkafka && git checkout $LIBRDKAFKA_VERSION && ./configure --install-deps && make && make install && popd
 
 install:
   - pub get
