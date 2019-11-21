@@ -15,3 +15,5 @@ typedef rd_kafka_get_err_descs_native_t = Void Function(Pointer<Pointer<RdKafkaE
 typedef rd_kafka_err2str_native_t = Pointer<Utf8> Function(Int32 err);
 
 typedef rd_kafka_err2name_native_t = Pointer<Utf8> Function(Int32 err);
+
+typedef rd_kafka_last_error_native_t = Int32 Function();

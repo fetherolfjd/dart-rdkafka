@@ -1,4 +1,4 @@
-# dart-rdkafka
+# dart-rdkafka  [![Build Status](https://travis-ci.org/fetherolfjd/dart-rdkafka.svg?branch=master)](https://travis-ci.org/fetherolfjd/dart-rdkafka)
 # Dart wrapper of the Apache Kafka C/C++ client library
 
 ## Overview

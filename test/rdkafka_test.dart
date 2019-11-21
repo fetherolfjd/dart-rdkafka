@@ -1,8 +1,14 @@
 import 'package:dart_rdkafka/dart_rdkafka.dart';
 import 'package:dart_rdkafka/src/rdkafka/rdkafka.dart';
 import 'package:test/test.dart';
+import 'package:logging/logging.dart';
 
 void main() {
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((LogRecord rec) {
+    print('${rec.level.name}: ${rec.time} - ${rec.message}');
+  });
+
   RdKafka rdKafka;
 
   setUp(() {
@@ -19,7 +25,7 @@ void main() {
 
   group('Test string version', () {
     test('Test rdkafka is expected version', () {
-      final expected = '1.2.2-RC1';
+      final expected = '1.2.2';
       final version = rdKafka.rdKafkaVersionStr();
       expect(version, equals(expected));
     });
@@ -60,6 +66,13 @@ void main() {
         final err = rdKafka.rdKafkaErrorToName(ed.code);
         expect(err, equals(ed.name));
       });
+    });
+  });
+
+  group('Test last error', () {
+    test('Last error is zero', () {
+      final lastErr = rdKafka.rdKafkaLastError();
+      expect(lastErr, equals(0));
     });
   });
 }

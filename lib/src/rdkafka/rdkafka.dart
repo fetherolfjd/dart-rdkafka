@@ -55,4 +55,8 @@ class RdKafka {
     return Utf8.fromUtf8(bindings.rd_kafka_err2name(err));
   }
 
+  int rdKafkaLastError() {
+    return bindings.rd_kafka_last_error();
+  }
+
 }
