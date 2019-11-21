@@ -9,6 +9,7 @@ make \
 && \
 git clone https://github.com/edenhill/librdkafka.git && \
 cd librdkafka && \
+git checkout v1.2.2 && \
 ./configure --install-deps && \
 make && \
 make install

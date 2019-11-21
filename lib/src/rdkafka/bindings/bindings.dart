@@ -1,12 +1,14 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
+import 'package:logging/logging.dart';
 
 import 'signatures.dart';
 import 'types.dart';
 import '../../common/utils.dart';
 
 class _RdKafkaBindings {
+  final Logger log = Logger('_RdKafkaBindings');
 
   DynamicLibrary rdKafka;
 
@@ -18,7 +20,7 @@ class _RdKafkaBindings {
   Pointer<Utf8> Function(int err) rd_kafka_err2name;
 
   _RdKafkaBindings() {
-    rdKafka = openLibraryForPlatform('rdkafka', path: '/usr/local/lib/');
+    rdKafka = Loader.openLibrary('rdkafka');
 
     rd_kafka_version = rdKafka
       .lookup<NativeFunction<rd_kafka_version_native_t>>('rd_kafka_version')

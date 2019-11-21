@@ -1,6 +1,25 @@
 {
-    "dockerFile": "./Dockerfile.devcontainer",
-    "extensions": [
-        "dart-code.dart-code"
-    ]
+  "name": "dart-rdkafka-dev-container",
+  "dockerFile": "./Dockerfile.devcontainer",
+  "extensions": [
+    "dart-code.dart-code"
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "editor.wordWrap": "off",
+    "editor.rulers": [
+        80
+    ],
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<esc>"]
+        }
+    ],
+    "editor.minimap.enabled": false
+  },
+  "postCreateCommand": "pub get"
 }
