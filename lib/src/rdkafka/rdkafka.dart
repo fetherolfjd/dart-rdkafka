@@ -59,4 +59,13 @@ class RdKafka {
     return bindings.rd_kafka_last_error();
   }
 
+  void rdKafkaConfNew() {
+    Pointer<types.RdKafkaConf> conf = bindings.rd_kafka_conf_new();
+    print(conf.ref);
+  }
+
+  // int rdKafkaFatalError() {
+
+  // }
+
 }

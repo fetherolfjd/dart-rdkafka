@@ -5,6 +5,7 @@
     "dart-code.dart-code"
   ],
   "settings": {
+    "debug.openDebug": "openOnDebugBreak",
     "editor.tabSize": 2,
     "editor.detectIndentation": true,
     "editor.wordWrap": "off",
@@ -19,7 +20,16 @@
             "after": ["<esc>"]
         }
     ],
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.selectionHighlight": false,
+      "editor.suggest.snippetsPreventQuickSuggestions": false,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": false
+    }
   },
   "postCreateCommand": "pub get"
 }

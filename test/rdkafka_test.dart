@@ -75,4 +75,10 @@ void main() {
       expect(lastErr, equals(0));
     });
   });
+
+  group('Test conf new', () {
+    test('New conf', () {
+      rdKafka.rdKafkaConfNew();
+    });
+  });
 }

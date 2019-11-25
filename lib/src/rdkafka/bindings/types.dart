@@ -10,3 +10,9 @@ class RdKafkaErrDesc extends Struct {
 
   Pointer<Utf8> desc;
 }
+
+class RdKafkaClientHandle extends Struct {
+}
+
+class RdKafkaConf extends Struct {
+}

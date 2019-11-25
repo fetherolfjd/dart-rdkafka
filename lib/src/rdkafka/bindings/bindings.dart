@@ -19,6 +19,8 @@ class _RdKafkaBindings {
   Pointer<Utf8> Function(int err) rd_kafka_err2str;
   Pointer<Utf8> Function(int err) rd_kafka_err2name;
   int Function() rd_kafka_last_error;
+  // int Function(Pointer<RdKafkaClientHandle> rk, Pointer<Utf8> errstr, int errstr_size) rd_kafka_fatal_error;
+  Pointer<RdKafkaConf> Function() rd_kafka_conf_new;
 
   _RdKafkaBindings() {
     rdKafka = Loader.openLibrary('rdkafka');
@@ -49,6 +51,14 @@ class _RdKafkaBindings {
 
     rd_kafka_last_error = rdKafka
       .lookup<NativeFunction<rd_kafka_last_error_native_t>>('rd_kafka_last_error')
+      .asFunction();
+
+    // rd_kafka_fatal_error = rdKafka
+    //   .lookup<NativeFunction<rd_kafka_fatal_error_native_t>>('rd_kafka_fatal_error')
+    //   .asFunction();
+
+    rd_kafka_conf_new = rdKafka
+      .lookup<NativeFunction<rd_kafka_conf_new_native_t>>('rd_kafka_conf_new')
       .asFunction();
 
   }

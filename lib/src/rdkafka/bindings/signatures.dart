@@ -17,3 +17,10 @@ typedef rd_kafka_err2str_native_t = Pointer<Utf8> Function(Int32 err);
 typedef rd_kafka_err2name_native_t = Pointer<Utf8> Function(Int32 err);
 
 typedef rd_kafka_last_error_native_t = Int32 Function();
+
+typedef rd_kafka_conf_new_native_t = Pointer<RdKafkaConf> Function();
+
+// errstr_size is of type "size_t", so it seems the best thing to do is use IntPtr according to some Googling...
+// typedef rd_kafka_fatal_error_native_t = Int32 Function(Pointer<RdKafkaClientHandle> rk, Pointer<Utf8> errstr, IntPtr errstr_size);
+
+// typedef rd_kafka_new_native_t = Pointer<RdKafkaClientHandle> Funtion(Int32 type, )
