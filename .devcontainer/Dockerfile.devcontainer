@@ -1,8 +1,9 @@
-FROM google/dart:2.6
+FROM google/dart:2.7
 
 WORKDIR /usr/src
 RUN apt-get update && \
 apt-get install -y \
+vim \
 gcc \
 g++ \
 make \
